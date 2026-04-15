@@ -21,16 +21,35 @@ export default function AboutSection() {
           transition={{ duration: 0.6, type: "spring" }}
           className="flex justify-center"
         >
-          <div className="glass-card rounded-3xl p-6 hover:glow-coral-sm transition-shadow duration-500">
-            <div className="animate-float-slow">
-              <img
-                src={aboutClipart}
-                alt="Creative digital marketing workspace"
-                loading="lazy"
-                width={800}
-                height={800}
-                className="w-full max-w-sm"
-              />
+          <div className="relative group">
+            {/* Decorative rotating border */}
+            <div className="absolute -inset-3 rounded-3xl bg-coral-gradient opacity-30 blur-xl group-hover:opacity-50 transition-opacity duration-500 animate-pulse-glow" />
+            <div className="absolute -inset-1.5 rounded-3xl bg-coral-gradient opacity-20 animate-spin-slow" style={{ animationDuration: '8s' }} />
+            
+            {/* Glass frame */}
+            <div className="relative glass-card rounded-3xl p-3 hover:glow-coral-sm transition-all duration-500">
+              <div className="overflow-hidden rounded-2xl">
+                <motion.img
+                  src={profilePhoto}
+                  alt="Sulove Shrestha - Senior Digital Marketing Officer"
+                  loading="lazy"
+                  width={500}
+                  height={600}
+                  className="w-full max-w-sm object-cover aspect-[4/5] grayscale-[20%] hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.5 }}
+                />
+              </div>
+              
+              {/* Name tag */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="absolute -bottom-4 left-1/2 -translate-x-1/2 glass-card px-5 py-2 rounded-full"
+              >
+                <span className="text-sm font-semibold text-coral whitespace-nowrap">Sulove Shrestha</span>
+              </motion.div>
             </div>
           </div>
         </motion.div>
