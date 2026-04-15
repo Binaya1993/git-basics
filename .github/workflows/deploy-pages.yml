@@ -54,6 +54,9 @@ jobs:
           # TanStack Start hardcodes runtime basepath for server output.
           # Rewrite it for GitHub Pages project-site path.
           perl -0pi -e 's/basepath:"",serializationAdapters/basepath:"\/git-basics\/",serializationAdapters/g; s/basepath:"\/",scrollRestoration/basepath:"\/git-basics\/",scrollRestoration/g' "$JS_ENTRY"
+          # In static hosting, this bootstrap call can throw invariant errors.
+          # Remove it so the client runs as a plain SPA on GitHub Pages.
+          perl -0pi -e 's/a\.stores\.matchesId\.get\(\)\.length\|\|await Ux\(a\),a/a/g' "$JS_ENTRY"
           CSS_BASENAME=$(basename "$CSS_FILE")
           JS_BASENAME=$(basename "$JS_ENTRY")
           BUILD_ID="${GITHUB_SHA:-$(date +%s)}"
