@@ -10,10 +10,7 @@ async function startApp() {
   // Load initial route state before first paint in pure SPA static hosting.
   await router.load();
 
-  const container = document.getElementById("root");
-  if (!container) {
-    throw new Error("Could not find root element");
-  }
+  const container = document;
 
   startTransition(() => {
     createRoot(container).render(
