@@ -20,8 +20,8 @@ const withBase = (path: string) => {
 
 // Quick-edit section: update these values first for most profile/theme changes.
 const profile = {
-  name: "Sagun",
-  role: "Full Stack Developer",
+  name: "Binaya Kumar Lamichhane",
+  role: "Mechanical Engineer - Renewable Energy",
   location: "Nepal",
   email: "hello@sagun.dev",
   linkedin: "linkedin.com/in/sagun",
@@ -76,9 +76,9 @@ export const portfolioConfig: PortfolioConfig = {
     },
   },
   seo: {
-    title: `${profile.name} | Developer Portfolio`,
+    title: `${profile.name} | Mechanical Engineer Portfolio`,
     description:
-      "Full Stack Developer building clean, performant web applications and digital products.",
+      "Mechanical Engineer specializing in renewable energy solutions and sustainable engineering.",
     author: profile.name,
     twitterSite: profile.twitterHandle,
     ogImage:
@@ -93,10 +93,10 @@ export const portfolioConfig: PortfolioConfig = {
       id: "hero-main",
       type: "hero",
       badge: profile.role,
-      headingPrefix: "Hi, I'm",
+      headingPrefix: "Hello, I'm",
       headingHighlight: profile.name,
       description:
-        "I build fast, scalable web applications with modern frontend and backend technologies.",
+        "Mechanical engineer passionate about designing innovative renewable energy solutions and sustainable systems.",
       primaryCta: {
         label: "Let's Connect",
         href: "#contact",

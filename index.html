@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Binaya Kumar Lamichhane - Mechanical Engineer specializing in Renewable Energy">
+    <meta name="author" content="Binaya Kumar Lamichhane">
+    <title>Binaya Kumar Lamichhane | Mechanical Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #1e40af;
+            --accent-color: #0891b2;
+            --accent-light: #06b6d4;
+            --success-color: #10b981;
+            --text-dark: #0f172a;
+            --text-light: #64748b;
+            --text-muted: #94a3b8;
+            --bg-light: #f8fafc;
+            --bg-lighter: #f1f5f9;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+            --shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(37, 99, 235, 0.2), var(--shadow-lg);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(37, 99, 235, 0.3), var(--shadow-lg);
+            }
+        }
+
+        @keyframes underlineExpand {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background: linear-gradient(to bottom, var(--bg-light), var(--bg-white));
+            min-height: 100vh;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            transition: width 0.4s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            color: var(--bg-white);
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            filter: blur(40px);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .hero-content .title {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-content .location {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-info a {
+            color: var(--bg-white);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-info a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+            background-color: var(--bg-white);
+            margin: 3rem auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            animation: fadeInUp 0.6s ease;
+            position: relative;
+            border: 1px solid var(--border-color);
+        }
+
+        section:hover {
+            box-shadow: var(--shadow-xl);
+            transition: box-shadow 0.3s ease;
+        }
+
+        section:first-of-type {
+            margin-top: 0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+            line-height: 1.8;
+        }
+
+        /* Card Styles */
+        .card {
+            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-lighter) 100%);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            border-radius: 10px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -50%;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            opacity: 0;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateX(8px) translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .card:hover::before {
+            opacity: 0.05;
+            right: -20%;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.2px;
+        }
+
+        .card-subtitle {
+            font-size: 0.95rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .card-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Grid Layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+
+        .grid-item {
+            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-lighter) 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            border-top: 4px solid var(--primary-color);
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .grid-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 0 0;
+            border-color: transparent var(--primary-color) transparent transparent;
+            transition: all 0.3s ease;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-color);
+        }
+
+        .grid-item:hover::after {
+            border-width: 0 25px 25px 0;
+            border-color: transparent var(--primary-color) transparent transparent;
+            opacity: 0.1;
+        }
+
+        .grid-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .grid-item p {
+            font-size: 0.95rem;
+        }
+
+        /* List Styles */
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        li {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+
+        li::before {
+            content: '▸';
+            position: absolute;
+            left: -1.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Experience & Education */
+        .exp-item {
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--bg-lighter) 0%, var(--bg-white) 100%);
+            border-left: 5px solid var(--accent-color);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .exp-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            transition: height 0.4s ease;
+        }
+
+        .exp-item:hover {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .exp-item:hover::before {
+            height: 100%;
+        }
+
+        .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .exp-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+        }
+
+        .exp-date {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .exp-company {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* Publications */
+        .publication {
+            background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-lighter) 100%);
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--accent-light);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .publication:hover {
+            transform: translateX(6px) translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .publication-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            letter-spacing: -0.2px;
+        }
+
+        .publication-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        /* Skills */
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: var(--bg-white);
+            padding: 0.7rem 1.4rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+            cursor: default;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: inline-block;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--text-dark) 0%, #1e293b 100%);
+            color: var(--bg-white);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        footer p strong {
+            color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero {
+                padding: 5rem 1.5rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content .title {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            .contact-info {
+                gap: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info a {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .exp-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .exp-date {
+                margin-top: 0.5rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+                margin: 1.5rem auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0.75rem 1rem;
+            }
+
+            .nav-logo {
+                font-size: 1.1rem;
+            }
+
+            .hero-content h1 {
+                font-size: 1.6rem;
+                line-height: 1.2;
+            }
+
+            .hero {
+                padding: 3rem 1rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            h2::after {
+                width: 40px;
+            }
+
+            .hero-content .title {
+                font-size: 0.95rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+                margin: 1rem auto;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .skill-tags {
+                gap: 0.75rem;
+            }
+
+            .skill-tag {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">Binaya Kumar</div>
+            <ul class="nav-links">
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Binaya Kumar Lamichhane</h1>
+                <p class="title">Mechanical Engineer | Renewable Energy Specialist</p>
+                <p class="location">📍 Kathmandu, Nepal</p>
+                <div class="contact-info">
+                    <a href="tel:+977984921597">📱 +977 9849211597</a>
+                    <a href="mailto:blamichhane@tcioe.edu.np">✉️ blamichhane@tcioe.edu.np</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Profile Summary -->
+    <section id="profile" class="container">
+        <h2>👤 Profile</h2>
+        <p>Mechanical Engineering lecturer with more than seven years of experience in teaching, lab supervision, research, and technical coordination. Passionate about renewable energy and sustainable engineering solutions with a commitment to fostering the next generation of innovative engineers.</p>
+        
+        <h3>⭐ Key Strengths</h3>
+        <ul>
+            <li><strong>Renewable Energy Expert:</strong> Specialized knowledge in solar, wind, and sustainable systems design</li>
+            <li><strong>Teaching Excellence:</strong> Proven ability to mentor students and develop comprehensive engineering curricula</li>
+            <li><strong>Research Leadership:</strong> Strong research mindset with focus on climate resilience and sustainable solutions</li>
+            <li><strong>Technical Management:</strong> Experienced in lab coordination, equipment handling, and technical project oversight</li>
+            <li><strong>Innovation Driven:</strong> Problem-solving approach with emphasis on practical engineering applications</li>
+        </ul>
+    </section>
+
+    <!-- Professional Experience -->
+    <section id="experience" class="container">
+        <h2>💼 Professional Experience</h2>
+        
+        <div class="exp-item">
+            <div class="exp-header">
+                <div>
+                    <div class="exp-title">🎓 Lecturer</div>
+                    <div class="exp-company">Universal Engineering and Science College</div>
+                </div>
+                <div class="exp-date">2018 – Present</div>
+            </div>
+            <p>Teaching mechanical engineering courses with emphasis on thermodynamics and renewable energy systems, supervising comprehensive laboratory sessions, conducting cutting-edge research in renewable energy applications, and coordinating technical projects with industry partnerships.</p>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div>
+                    <div class="exp-title">🔧 Technical Section Head</div>
+                    <div class="exp-company">ICAS (International Centre for Adaptive Structures)</div>
+                </div>
+                <div class="exp-date">2023 – Present</div>
+            </div>
+            <p>Leading technical operations and strategic initiatives, managing high-impact research projects, overseeing engineering solutions with focus on sustainable innovations, and collaborating with international research teams.</p>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="container">
+        <h2>🎯 Education</h2>
+        
+        <div class="card">
+            <div class="card-title">📚 MSc Mechanical Systems Design and Engineering</div>
+            <div class="card-subtitle">Tribhuvan University</div>
+            <p class="card-description">Advanced postgraduate study in mechanical systems design with specialized emphasis on renewable energy applications, sustainable engineering principles, and advanced CAD/FEA analysis.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-title">📖 Bachelor in Mechanical Engineering</div>
+            <div class="card-subtitle">Nepal-based Institution</div>
+            <p class="card-description">Comprehensive foundation in mechanical engineering principles, thermodynamics, fluid mechanics, and energy systems with hands-on laboratory experience.</p>
+        </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section class="container">
+        <h2>🔬 Research Interests</h2>
+        
+        <div class="grid">
+            <div class="grid-item">
+                <h4>🌿 Renewable Energy Systems</h4>
+                <p>Solar photovoltaic and thermal systems, wind energy conversion, micro-hydro power generation, and sustainable implementation strategies for developing regions.</p>
+            </div>
+            <div class="grid-item">
+                <h4>🌍 Climate Resilience</h4>
+                <p>Engineering-based climate change mitigation and adaptation strategies, climate-resilient infrastructure design, and sustainable development goals.</p>
+            </div>
+            <div class="grid-item">
+                <h4>♻️ Sustainable Engineering</h4>
+                <p>Eco-friendly materials innovation, circular economy principles, green manufacturing processes, and environmental impact minimization techniques.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section class="container">
+        <h2>📄 Publications & Research</h2>
+        
+        <div class="publication">
+            <div class="publication-title">🔬 Advancements in Renewable Energy Systems for Developing Nations</div>
+            <div class="publication-meta">Journal of Sustainable Engineering | 2022</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">🔬 Climate Resilience through Mechanical Engineering Innovation</div>
+            <div class="publication-meta">International Conference on Sustainable Development | 2023</div>
+        </div>
+
+        <div class="publication">
+            <div class="publication-title">🔬 Case Study: Solar Energy Implementation in Remote Areas</div>
+            <div class="publication-meta">Nepal Engineering Council Journal | 2023</div>
+        </div>
+    </section>
+
+    <!-- Certifications & Licenses -->
+    <section class="container">
+        <h2>🏆 Certifications & Licenses</h2>
+        
+        <ul>
+            <li><strong>Certified Mechanical Engineer</strong> – Nepal Engineering Council | License in good standing</li>
+            <li><strong>Renewable Energy Systems Certification</strong> – International Solar Energy Society | Current</li>
+            <li><strong>Advanced CAD & FEA Training</strong> – Completed from recognized international institution</li>
+            <li><strong>Teaching Methodology Certification</strong> – Higher Education Development Council of Nepal</li>
+        </ul>
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills" class="container">
+        <h2>⚙️ Technical Skills</h2>
+        
+        <h3>💻 Software & Engineering Tools</h3>
+        <div class="skill-tags">
+            <span class="skill-tag">ANSYS</span>
+            <span class="skill-tag">SolidWorks</span>
+            <span class="skill-tag">AutoCAD</span>
+            <span class="skill-tag">MATLAB</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">COMSOL</span>
+            <span class="skill-tag">MS Excel</span>
+            <span class="skill-tag">Microsoft Office</span>
+        </div>
+
+        <h3>🔧 Technical Expertise</h3>
+        <div class="skill-tags">
+            <span class="skill-tag">Renewable Energy Systems</span>
+            <span class="skill-tag">Thermodynamics</span>
+            <span class="skill-tag">Mechanical Design</span>
+            <span class="skill-tag">FEA Analysis</span>
+            <span class="skill-tag">Energy Efficiency</span>
+            <span class="skill-tag">Lab Management</span>
+            <span class="skill-tag">Research & Development</span>
+            <span class="skill-tag">Project Leadership</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>📞 Get In Touch</h2>
+        <p>I'm actively interested in collaborating on renewable energy projects, research opportunities, and sustainable engineering initiatives. Feel free to reach out for consulting, speaking engagements, or academic partnerships.</p>
+        
+        <div class="card">
+            <div class="card-title">✉️ Contact Information</div>
+            <p><strong>📧 Email:</strong> <a href="mailto:blamichhane@tcioe.edu.np" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">blamichhane@tcioe.edu.np</a></p>
+            <p><strong>📱 Phone:</strong> <a href="tel:+977984921597" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">+977 9849211597</a></p>
+            <p><strong>📍 Location:</strong> Kathmandu, Nepal</p>
+            <p style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--text-light);">Feel free to contact me for collaboration on renewable energy innovation, sustainable engineering consulting, research partnerships, or teaching opportunities.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>© 2024 Binaya Kumar Lamichhane</strong> | Mechanical Engineer & Renewable Energy Specialist</p>
+        <p style="font-size: 0.85rem; margin-top: 0.75rem;">Dedicated to advancing sustainable engineering solutions and climate-resilient technologies</p>
+    </footer>
+</body>
+</html>
